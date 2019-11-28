@@ -10,13 +10,12 @@ import { defaultPlaygroundQuery } from './defaultPlaygroundQuery'
  * Follow the instructions here: https://github.com/prisma-csb/graphql-example-ts/blob/master/SETUP.md
  */
 
-
 const server = new GraphQLServer({
-  typeDefs: './src/schema.graphql',
+  typeDefs: __dirname + '/schema.graphql',
   resolvers: resolvers,
   context: {
     prisma,
   },
 } as any)
-
-server.start({ defaultPlaygroundQuery }, () => console.log('Server is running on http://localhost:4000'))
+module.exports = server.createHttpServer({ defaultPlaygroundQuery })
+// server.start({ defaultPlaygroundQuery }, () => console.log('Server is running on http://localhost:4000'))

@@ -1,13 +1,7 @@
 export const defaultPlaygroundQuery = `\
 query {
-  feed {
+  reminders {
     id
-    title
-    published
-    author {
-      id
-      name
-      email
-    }
+    content
   }
 }`

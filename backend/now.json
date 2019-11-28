@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "reminders-back",
+  "builds": [{ "src": "src/index.ts", "use": "@now/node" }],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "src/index.ts"
+    }
+  ]
+}
