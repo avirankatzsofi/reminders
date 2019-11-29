@@ -17,5 +17,5 @@ const server = new GraphQLServer({
     prisma,
   },
 } as any)
-module.exports = server.createHttpServer({ defaultPlaygroundQuery })
+module.exports = server.createHttpServer({ defaultPlaygroundQuery, endpoint: '/graphql', playground: '/graphql' })
 // server.start({ defaultPlaygroundQuery }, () => console.log('Server is running on http://localhost:4000'))

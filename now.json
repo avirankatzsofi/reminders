@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "name": "reminders",
+  "builds": [
+    {
+      "src": "backend/src/index.ts",
+      "use": "@now/node"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "."
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/graphql",
+      "dest": "backend/src/index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/dist/$1"
+    }
+  ]
+}
